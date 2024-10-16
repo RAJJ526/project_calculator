@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+   <form action="{% url 'post' %}" method="POST">
+    {% csrf_token %}
+    <label for="">NUMBER 1</label>
+    <input type="number" name="number_one">
+    <label for="">NUMBER 2</label>
+    <input type="number" name="number_two">
+    <select name="operation">
+        <option value="add">ADD</option>
+        <option value="subtract">SUBTRACT</option>
+        <option value="multiply">MULTIPLY</option>
+        <option value="divide">DIVIDE</option>
+    </select>
+    <button type="submit">submit</button>
+    <h1>the result is:{{result}}</h1>
+
+   </form> 
+</body>
+</html>
